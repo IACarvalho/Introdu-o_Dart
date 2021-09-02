@@ -80,3 +80,43 @@ proposicao1 && proposicao2 // AND
 proposicao1 || proposicao2 // OR
 !proposicao // negação
 ```
+
+## Input(Entrada de dados)
+
+Para usar entrada de dados é necessário importar um map, semelhante ao feito em **C**
+
+```dart
+import 'dart:io';
+
+main() {
+  print('Digite sua idade');
+  var idade = stdin.readLineSync();
+  print(idade);
+}
+
+// O dart sempre recebe texto do input, então é necessário fazer uma conversão
+import 'dart:io';
+
+main() {
+  print('Digite sua idade');
+  var input = stdin.readLineSync();
+  // A entrada no Dart é Strin? que aceita null, já o parse exige string, que
+  // não aceita null, então tem que fazer um teste antes para poder fazer a
+  // conversão
+  var idade = input =! null? int.parse(input): null;
+  print(idade);
+}
+
+```
+
+# Interpolação de string
+
+Para interpolar strings no Dart é bem simples, basta passar o código entre **${}**
+
+```dart
+main(){
+  var teste = 5;
+
+  print("Testando ${teste}");
+}
+```
